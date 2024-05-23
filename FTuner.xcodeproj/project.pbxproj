@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DCB39A92BF91ECD0041BCF8 /* FTunerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */; };
+		3DCB39AB2BF91ECD0041BCF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */; };
+		3DCB39AD2BF91ECF0041BCF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB39AC2BF91ECF0041BCF8 /* Assets.xcassets */; };
+		3DCB39B02BF91ECF0041BCF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB39AF2BF91ECF0041BCF8 /* Preview Assets.xcassets */; };
+		3DCB39BA2BF91ECF0041BCF8 /* FTunerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39B92BF91ECF0041BCF8 /* FTunerTests.swift */; };
+		3DCB39C42BF91ECF0041BCF8 /* FTunerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39C32BF91ECF0041BCF8 /* FTunerUITests.swift */; };
+		3DCB39C62BF91ECF0041BCF8 /* FTunerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39C52BF91ECF0041BCF8 /* FTunerUITestsLaunchTests.swift */; };
+		3DCB39D62BF920510041BCF8 /* YinYang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39D52BF920510041BCF8 /* YinYang.swift */; };
+		3DCB39D82BF921330041BCF8 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39D72BF921330041BCF8 /* PitchDetector.swift */; };
+		3DCB39DA2BF9216E0041BCF8 /* AudioCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39D92BF9216E0041BCF8 /* AudioCapture.swift */; };
+		3DCB39DD2BF925B20041BCF8 /* NoteFrequencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */; };
+		3DCB39E02BFA25460041BCF8 /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39DF2BFA25460041BCF8 /* FFT.swift */; };
+		3DCB39E42BFE2C520041BCF8 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39E32BFE2C520041BCF8 /* ErrorType.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DCB39B62BF91ECF0041BCF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCB399D2BF91ECC0041BCF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCB39A42BF91ECC0041BCF8;
+			remoteInfo = FTuner;
+		};
+		3DCB39C02BF91ECF0041BCF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCB399D2BF91ECC0041BCF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCB39A42BF91ECC0041BCF8;
+			remoteInfo = FTuner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3DCB39A52BF91ECD0041BCF8 /* FTuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTunerApp.swift; sourceTree = "<group>"; };
+		3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3DCB39AC2BF91ECF0041BCF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DCB39AF2BF91ECF0041BCF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DCB39B52BF91ECF0041BCF8 /* FTunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTunerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCB39B92BF91ECF0041BCF8 /* FTunerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTunerTests.swift; sourceTree = "<group>"; };
+		3DCB39BF2BF91ECF0041BCF8 /* FTunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTunerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCB39C32BF91ECF0041BCF8 /* FTunerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTunerUITests.swift; sourceTree = "<group>"; };
+		3DCB39C52BF91ECF0041BCF8 /* FTunerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTunerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DCB39D52BF920510041BCF8 /* YinYang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YinYang.swift; sourceTree = "<group>"; };
+		3DCB39D72BF921330041BCF8 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
+		3DCB39D92BF9216E0041BCF8 /* AudioCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCapture.swift; sourceTree = "<group>"; };
+		3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFrequencies.swift; sourceTree = "<group>"; };
+		3DCB39DF2BFA25460041BCF8 /* FFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFT.swift; sourceTree = "<group>"; };
+		3DCB39E32BFE2C520041BCF8 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DCB39A22BF91ECC0041BCF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB39B22BF91ECF0041BCF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB39BC2BF91ECF0041BCF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DCB399C2BF91ECC0041BCF8 = {
+			isa = PBXGroup;
+			children = (
+				3DCB39A72BF91ECD0041BCF8 /* FTuner */,
+				3DCB39B82BF91ECF0041BCF8 /* FTunerTests */,
+				3DCB39C22BF91ECF0041BCF8 /* FTunerUITests */,
+				3DCB39A62BF91ECD0041BCF8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DCB39A62BF91ECD0041BCF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39A52BF91ECD0041BCF8 /* FTuner.app */,
+				3DCB39B52BF91ECF0041BCF8 /* FTunerTests.xctest */,
+				3DCB39BF2BF91ECF0041BCF8 /* FTunerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCB39A72BF91ECD0041BCF8 /* FTuner */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39DE2BFA253A0041BCF8 /* Helpers */,
+				3DCB39DB2BF925A10041BCF8 /* NoteFrequencies */,
+				3DCB39D22BF91ED90041BCF8 /* FrequencyDetection */,
+				3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */,
+				3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */,
+				3DCB39AC2BF91ECF0041BCF8 /* Assets.xcassets */,
+				3DCB39AE2BF91ECF0041BCF8 /* Preview Content */,
+			);
+			path = FTuner;
+			sourceTree = "<group>";
+		};
+		3DCB39AE2BF91ECF0041BCF8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39AF2BF91ECF0041BCF8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DCB39B82BF91ECF0041BCF8 /* FTunerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39B92BF91ECF0041BCF8 /* FTunerTests.swift */,
+			);
+			path = FTunerTests;
+			sourceTree = "<group>";
+		};
+		3DCB39C22BF91ECF0041BCF8 /* FTunerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39C32BF91ECF0041BCF8 /* FTunerUITests.swift */,
+				3DCB39C52BF91ECF0041BCF8 /* FTunerUITestsLaunchTests.swift */,
+			);
+			path = FTunerUITests;
+			sourceTree = "<group>";
+		};
+		3DCB39D22BF91ED90041BCF8 /* FrequencyDetection */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39D52BF920510041BCF8 /* YinYang.swift */,
+				3DCB39D92BF9216E0041BCF8 /* AudioCapture.swift */,
+				3DCB39D72BF921330041BCF8 /* PitchDetector.swift */,
+			);
+			path = FrequencyDetection;
+			sourceTree = "<group>";
+		};
+		3DCB39DB2BF925A10041BCF8 /* NoteFrequencies */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */,
+			);
+			path = NoteFrequencies;
+			sourceTree = "<group>";
+		};
+		3DCB39DE2BFA253A0041BCF8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39DF2BFA25460041BCF8 /* FFT.swift */,
+				3DCB39E32BFE2C520041BCF8 /* ErrorType.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DCB39A42BF91ECC0041BCF8 /* FTuner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCB39C92BF91ECF0041BCF8 /* Build configuration list for PBXNativeTarget "FTuner" */;
+			buildPhases = (
+				3DCB39A12BF91ECC0041BCF8 /* Sources */,
+				3DCB39A22BF91ECC0041BCF8 /* Frameworks */,
+				3DCB39A32BF91ECC0041BCF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTuner;
+			productName = FTuner;
+			productReference = 3DCB39A52BF91ECD0041BCF8 /* FTuner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DCB39B42BF91ECF0041BCF8 /* FTunerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCB39CC2BF91ECF0041BCF8 /* Build configuration list for PBXNativeTarget "FTunerTests" */;
+			buildPhases = (
+				3DCB39B12BF91ECF0041BCF8 /* Sources */,
+				3DCB39B22BF91ECF0041BCF8 /* Frameworks */,
+				3DCB39B32BF91ECF0041BCF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DCB39B72BF91ECF0041BCF8 /* PBXTargetDependency */,
+			);
+			name = FTunerTests;
+			productName = FTunerTests;
+			productReference = 3DCB39B52BF91ECF0041BCF8 /* FTunerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3DCB39BE2BF91ECF0041BCF8 /* FTunerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCB39CF2BF91ECF0041BCF8 /* Build configuration list for PBXNativeTarget "FTunerUITests" */;
+			buildPhases = (
+				3DCB39BB2BF91ECF0041BCF8 /* Sources */,
+				3DCB39BC2BF91ECF0041BCF8 /* Frameworks */,
+				3DCB39BD2BF91ECF0041BCF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DCB39C12BF91ECF0041BCF8 /* PBXTargetDependency */,
+			);
+			name = FTunerUITests;
+			productName = FTunerUITests;
+			productReference = 3DCB39BF2BF91ECF0041BCF8 /* FTunerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DCB399D2BF91ECC0041BCF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					3DCB39A42BF91ECC0041BCF8 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					3DCB39B42BF91ECF0041BCF8 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 3DCB39A42BF91ECC0041BCF8;
+					};
+					3DCB39BE2BF91ECF0041BCF8 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 3DCB39A42BF91ECC0041BCF8;
+					};
+				};
+			};
+			buildConfigurationList = 3DCB39A02BF91ECC0041BCF8 /* Build configuration list for PBXProject "FTuner" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DCB399C2BF91ECC0041BCF8;
+			productRefGroup = 3DCB39A62BF91ECD0041BCF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DCB39A42BF91ECC0041BCF8 /* FTuner */,
+				3DCB39B42BF91ECF0041BCF8 /* FTunerTests */,
+				3DCB39BE2BF91ECF0041BCF8 /* FTunerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DCB39A32BF91ECC0041BCF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCB39B02BF91ECF0041BCF8 /* Preview Assets.xcassets in Resources */,
+				3DCB39AD2BF91ECF0041BCF8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB39B32BF91ECF0041BCF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB39BD2BF91ECF0041BCF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DCB39A12BF91ECC0041BCF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCB39D82BF921330041BCF8 /* PitchDetector.swift in Sources */,
+				3DCB39DA2BF9216E0041BCF8 /* AudioCapture.swift in Sources */,
+				3DCB39AB2BF91ECD0041BCF8 /* ContentView.swift in Sources */,
+				3DCB39E02BFA25460041BCF8 /* FFT.swift in Sources */,
+				3DCB39A92BF91ECD0041BCF8 /* FTunerApp.swift in Sources */,
+				3DCB39D62BF920510041BCF8 /* YinYang.swift in Sources */,
+				3DCB39E42BFE2C520041BCF8 /* ErrorType.swift in Sources */,
+				3DCB39DD2BF925B20041BCF8 /* NoteFrequencies.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB39B12BF91ECF0041BCF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCB39BA2BF91ECF0041BCF8 /* FTunerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB39BB2BF91ECF0041BCF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCB39C62BF91ECF0041BCF8 /* FTunerUITestsLaunchTests.swift in Sources */,
+				3DCB39C42BF91ECF0041BCF8 /* FTunerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DCB39B72BF91ECF0041BCF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCB39A42BF91ECC0041BCF8 /* FTuner */;
+			targetProxy = 3DCB39B62BF91ECF0041BCF8 /* PBXContainerItemProxy */;
+		};
+		3DCB39C12BF91ECF0041BCF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCB39A42BF91ECC0041BCF8 /* FTuner */;
+			targetProxy = 3DCB39C02BF91ECF0041BCF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3DCB39C72BF91ECF0041BCF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DCB39C82BF91ECF0041BCF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DCB39CA2BF91ECF0041BCF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FTuner/Preview Content\"";
+				DEVELOPMENT_TEAM = JTFGBB347S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "\"We need to record sound to detect tune\"";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "\"We need to record sound to detect tune\"";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fke.FTuner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DCB39CB2BF91ECF0041BCF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FTuner/Preview Content\"";
+				DEVELOPMENT_TEAM = JTFGBB347S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "\"We need to record sound to detect tune\"";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "\"We need to record sound to detect tune\"";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fke.FTuner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3DCB39CD2BF91ECF0041BCF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fke.FTunerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FTuner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FTuner";
+			};
+			name = Debug;
+		};
+		3DCB39CE2BF91ECF0041BCF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fke.FTunerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FTuner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FTuner";
+			};
+			name = Release;
+		};
+		3DCB39D02BF91ECF0041BCF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fke.FTunerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FTuner;
+			};
+			name = Debug;
+		};
+		3DCB39D12BF91ECF0041BCF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fke.FTunerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FTuner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DCB39A02BF91ECC0041BCF8 /* Build configuration list for PBXProject "FTuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCB39C72BF91ECF0041BCF8 /* Debug */,
+				3DCB39C82BF91ECF0041BCF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCB39C92BF91ECF0041BCF8 /* Build configuration list for PBXNativeTarget "FTuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCB39CA2BF91ECF0041BCF8 /* Debug */,
+				3DCB39CB2BF91ECF0041BCF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCB39CC2BF91ECF0041BCF8 /* Build configuration list for PBXNativeTarget "FTunerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCB39CD2BF91ECF0041BCF8 /* Debug */,
+				3DCB39CE2BF91ECF0041BCF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCB39CF2BF91ECF0041BCF8 /* Build configuration list for PBXNativeTarget "FTunerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCB39D02BF91ECF0041BCF8 /* Debug */,
+				3DCB39D12BF91ECF0041BCF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DCB399D2BF91ECC0041BCF8 /* Project object */;
+}
