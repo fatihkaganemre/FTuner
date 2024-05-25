@@ -10,7 +10,7 @@ import Combine
 
 @Observable class ViewModel {
     var tuneName: String = "C0"
-    var frequencyDifference: Double = -5
+    var frequencyDifference: Double = 5
     var differenceText: String = "-4.245"
     var color: Color = .green
     var isLoading: Bool = false
@@ -38,39 +38,41 @@ import Combine
             .sink { [weak self] completion in
                 self?.isLoading = false
             } receiveValue: { [weak self] pitch in
-                if let (tune, difference) = getTuneAndDifference(fromFrequency: pitch) {
-                    self?.differenceText = self?.formatter.string(from: difference as NSNumber) ?? ""
-                    self?.frequencyDifference = difference
-                    self?.color = .red
-                    self?.tuneName = tune
-                    self?.isLoading = false
-                }
+                guard let self = self else { return }
+                guard let (tune, difference) = getTuneAndDifference(fromFrequency: pitch) else { return }
+
+                differenceText = formatter.string(from: difference as NSNumber) ?? ""
+                frequencyDifference = difference
+                tuneName = tune
+                isLoading = false
+                color = getTheColorOfDetectedPitch(pitch)
             }
             .store(in: &cancellableSet)
+    }
+    
+    private func getTheColorOfDetectedPitch(_ pitch: Double) -> Color {
+        guard let percentage = calculateTheDifferencePercentage(ofFrequency: pitch) else { return .red }
+        switch percentage {
+            case ..<10: return .green
+            case 10..<15: return .yellow
+            case 15...: return .red
+            default: return .red
+        }
     }
 }
 
 struct ContentView: View {
-    var model = ViewModel()
+    @State var model = ViewModel()
     
     var body: some View {
         if model.isLoading {
             ProgressView().progressViewStyle(.circular)
         } else {
-            HStack(alignment: .firstTextBaseline, spacing: 20){
-                if model.frequencyDifference < 0 {
-                    Text(String(model.differenceText)).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                }
-                Text(model.tuneName).font(.system(size: 100))
-                    .foregroundColor(model.color)
-                if model.frequencyDifference > 0 {
-                    Text(String(model.differenceText)).font(.title)
-                }
-            }
-            .padding()
-            .onAppear(perform: {
-                model.startPitchDetection()
-            })
+            TuneView(model: model)
+                .padding()
+                .onAppear(perform: {
+                    model.startPitchDetection()
+                })
         }
     }
 }

@@ -8,12 +8,11 @@
 import AVFoundation
 import Combine
 
-
 protocol AudioCaptureProtocol {
     var sampleRate: Double { get }
     func startRecording() -> AnyPublisher<AVAudioPCMBuffer, ErrorType>
     func stopRecording()
-    func askMicrophonePermission() async throws -> Bool
+    func askMicrophonePermission() -> AnyPublisher<Void, ErrorType>
 }
 
 class AudioCapture: AudioCaptureProtocol {
@@ -24,9 +23,16 @@ class AudioCapture: AudioCaptureProtocol {
         audioEngine.inputNode.inputFormat(forBus: 0).sampleRate
     }
     
-    func askMicrophonePermission() -> AnyPublisher<Bool, ErrorType> {
-        Future
-        return await AVAudioApplication.requestRecordPermission()
+    func askMicrophonePermission() -> AnyPublisher<Void, ErrorType> {
+        Future<Void, ErrorType> { promise in
+            AVAudioApplication.requestRecordPermission { isAllowed in
+                if isAllowed {
+                    promise(.success(()))
+                } else {
+                    promise(.failure(ErrorType.noMicPermission))
+                }
+            }
+        }.eraseToAnyPublisher()
     }
     
     func startRecording() -> AnyPublisher<AVAudioPCMBuffer, ErrorType> {
@@ -40,7 +46,7 @@ class AudioCapture: AudioCaptureProtocol {
         let inputNode = audioEngine.inputNode
         let format = inputNode.inputFormat(forBus: 0)
         inputNode.removeTap(onBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: format) { buffer, _ in
+        inputNode.installTap(onBus: 0, bufferSize: 512, format: format) { buffer, _ in
             bufferPublisher.send(buffer)
         }
         
@@ -49,14 +55,14 @@ class AudioCapture: AudioCaptureProtocol {
         } catch {
             bufferPublisher.send(completion: .failure(.engineError))
         }
+
         return bufferPublisher.eraseToAnyPublisher()
     }
+
     
     func stopRecording() {
-        if audioEngine.isRunning {
-            audioEngine.stop()
-        }
         audioEngine.inputNode.removeTap(onBus: 0)
+        audioEngine.stop()
     }
     
     private func setAudioSession() throws {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D73998C2C01012900B647C0 /* TuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D73998B2C01012900B647C0 /* TuneView.swift */; };
 		3DCB39A92BF91ECD0041BCF8 /* FTunerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */; };
 		3DCB39AB2BF91ECD0041BCF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */; };
 		3DCB39AD2BF91ECF0041BCF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB39AC2BF91ECF0041BCF8 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D73998B2C01012900B647C0 /* TuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneView.swift; sourceTree = "<group>"; };
 		3DCB39A52BF91ECD0041BCF8 /* FTuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTunerApp.swift; sourceTree = "<group>"; };
 		3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				3DCB39D22BF91ED90041BCF8 /* FrequencyDetection */,
 				3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */,
 				3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */,
+				3D73998B2C01012900B647C0 /* TuneView.swift */,
 				3DCB39AC2BF91ECF0041BCF8 /* Assets.xcassets */,
 				3DCB39AE2BF91ECF0041BCF8 /* Preview Content */,
 			);
@@ -302,6 +305,7 @@
 				3DCB39D82BF921330041BCF8 /* PitchDetector.swift in Sources */,
 				3DCB39DA2BF9216E0041BCF8 /* AudioCapture.swift in Sources */,
 				3DCB39AB2BF91ECD0041BCF8 /* ContentView.swift in Sources */,
+				3D73998C2C01012900B647C0 /* TuneView.swift in Sources */,
 				3DCB39E02BFA25460041BCF8 /* FFT.swift in Sources */,
 				3DCB39A92BF91ECD0041BCF8 /* FTunerApp.swift in Sources */,
 				3DCB39D62BF920510041BCF8 /* YinYang.swift in Sources */,

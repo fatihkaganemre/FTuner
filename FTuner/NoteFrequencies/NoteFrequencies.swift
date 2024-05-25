@@ -8,7 +8,7 @@
 import Foundation
 
 // Dictionary of music note frequencies (A4 = 440 Hz)
-let noteFrequencies: [String: Double] = [
+let notesAndFrequencies: [String: Double] = [
     "C0": 16.35, "C#0": 17.32, "D0": 18.35, "D#0": 19.45, "E0": 20.60, "F0": 21.83, "F#0": 23.12, "G0": 24.50, "G#0": 25.96, "A0": 27.50, "A#0": 29.14, "B0": 30.87,
     "C1": 32.70, "C#1": 34.65, "D1": 36.71, "D#1": 38.89, "E1": 41.20, "F1": 43.65, "F#1": 46.25, "G1": 49.00, "G#1": 51.91, "A1": 55.00, "A#1": 58.27, "B1": 61.74,
     "C2": 65.41, "C#2": 69.30, "D2": 73.42, "D#2": 77.78, "E2": 82.41, "F2": 87.31, "F#2": 92.50, "G2": 98.00, "G#2": 103.83, "A2": 110.00, "A#2": 116.54, "B2": 123.47,
@@ -25,7 +25,7 @@ let maxFrequency = 7903.0
 
 func getTuneAndDifference(fromFrequency frequency: Double) -> (tune: String, difference: Double)? {
     var tuneAndDifferences: [String: Double] = [:]
-    for note in noteFrequencies {
+    for note in notesAndFrequencies {
         let difference = frequency - note.value
         tuneAndDifferences[note.key] = difference
     }
@@ -35,4 +35,21 @@ func getTuneAndDifference(fromFrequency frequency: Double) -> (tune: String, dif
         .map { (tune: $0.key, difference: $0.value) }
     
     return tuneAndDifference
+}
+
+func calculateTheDifferencePercentage(ofFrequency frequency: Double) -> Int? {
+    guard let (tune, difference) = getTuneAndDifference(fromFrequency: frequency) else { return nil}
+    let frequencies = notesAndFrequencies.map(\.value).sorted(by: { $0 < $1 })
+    guard let frequencyOfNote = notesAndFrequencies[tune] else { return nil }
+    guard let indexOfNote = frequencies.firstIndex(of: frequencyOfNote) else { return nil }
+    
+    var closestFrequency: Double = 0.0
+    if difference > 0 && indexOfNote + 1 < frequencies.count {
+        closestFrequency = frequencies[indexOfNote + 1]
+    } else if difference < 0 && indexOfNote - 1 > 0 {
+        closestFrequency = frequencies[indexOfNote - 1]
+    }
+    
+    let percentage = Int(abs(difference) * 100 / abs(closestFrequency -  frequencyOfNote))
+    return percentage
 }

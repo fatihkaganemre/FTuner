@@ -31,29 +31,26 @@ class PitchDetector: PitchDetectorProtocol {
         audioCapture.stopRecording()
     }
 
-    // Perform pitch detection
     func detectPitch() -> AnyPublisher<Double, ErrorType> {
-        Task {
-            do {
-                let isPermitted = try await audioCapture.askMicrophonePermission()
-                //isPermitted ? startRecording() : showAlert()
-                
-            } catch {
-                 //  showAlert: print(error)
-            }
-        }
-        
         return audioCapture
-            .startRecording()
-            .debounce(for: .milliseconds(10), scheduler: DispatchQueue.main)
-            .map { [weak self] buffer -> Double? in
+            .askMicrophonePermission()
+            .flatMap { [weak self] in return self?.audioCapture.startRecording() ?? Empty().eraseToAnyPublisher() }
+            .throttle(for: .milliseconds(100), scheduler: DispatchQueue.main, latest: true)
+            .compactMap { [weak self] buffer -> Double? in
                 guard let self = self else { return nil }
-                let yinYangPitch = self.yinYangPitchDetector.detectPitch(forBuffer: buffer, sampleRate: self.audioCapture.sampleRate)
-                print("yinYang: \(yinYangPitch)")
-                return yinYangPitch
+                return self.processBuffer(buffer)
             }
-            .compactMap { $0 }
-            .filter { $0 < maxFrequency && $0 > minFrequency }
+            .filter { [weak self] in self?.isWithinFrequencyRange($0) ?? false }
             .eraseToAnyPublisher()
+    }
+    
+    private func processBuffer(_ buffer: AVAudioPCMBuffer) -> Double? {
+        let pitch = yinYangPitchDetector.detectPitch(forBuffer: buffer, sampleRate: audioCapture.sampleRate)
+        print("yinYang: \(String(describing: pitch))")
+        return pitch
+    }
+
+    private func isWithinFrequencyRange(_ pitch: Double) -> Bool {
+        return pitch < maxFrequency && pitch > minFrequency
     }
 }
