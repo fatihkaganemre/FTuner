@@ -12,7 +12,7 @@ struct TuneView: View {
     
     var body: some View {
         ZStack {
-            Text(model.tuneName).font(.system(size: 100))
+            Text(model.tuneName).font(.system(size: 90))
                 .foregroundColor(model.color)
                 .containerRelativeFrame(.vertical, alignment: .center)
             

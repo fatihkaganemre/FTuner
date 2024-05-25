@@ -17,7 +17,7 @@ class YinYangPitchDetector: YinYangPitchDetectorProtocol {
 
     func detectPitch(forBuffer buffer: AVAudioPCMBuffer, sampleRate: Double) -> Double? {
         guard let floatChannelData = buffer.floatChannelData else { return nil }
-        
+
         let frameCount = Int(buffer.frameLength)
         let inputArray = Array(UnsafeBufferPointer(start: floatChannelData[0], count: frameCount))
         
