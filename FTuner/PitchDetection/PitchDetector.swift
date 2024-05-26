@@ -15,7 +15,6 @@ protocol PitchDetectorProtocol {
     func stop()
 }
 
-// Assuming PitchDetection is the name of your Core ML model class
 class PitchDetector: PitchDetectorProtocol {
     private let audioCapture: AudioCaptureProtocol
     private let yinYangPitchDetector: YinYangPitchDetectorProtocol
@@ -48,8 +47,9 @@ class PitchDetector: PitchDetectorProtocol {
     func detectPitch() -> AnyPublisher<Double, ErrorType> {
         return audioCapture
             .askMicrophonePermission()
-            .throttle(for: .milliseconds(100), scheduler: DispatchQueue.global(), latest: true)
             .flatMap { [weak self] in return self?.audioCapture.startRecording() ?? Empty().eraseToAnyPublisher() }
+            .throttle(for: .milliseconds(100), scheduler: DispatchQueue.global(), latest: true)
+            .receive(on: DispatchQueue.global(qos: .userInteractive))
             .compactMap { [weak self] buffer -> Double? in
                 guard let self = self else { return nil }
                 return self.processBuffer(buffer)
@@ -66,6 +66,6 @@ class PitchDetector: PitchDetectorProtocol {
     }
 
     private func isWithinFrequencyRange(_ pitch: Double) -> Bool {
-        return pitch < maxFrequency && pitch > minFrequency
+        return pitch < TuneProvider.maxFrequency && pitch > TuneProvider.minFrequency
     }
 }

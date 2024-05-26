@@ -113,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				3DCB39DE2BFA253A0041BCF8 /* Helpers */,
-				3DCB39DB2BF925A10041BCF8 /* NotesAndFrequencies */,
 				3DCB39D22BF91ED90041BCF8 /* PitchDetection */,
 				3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */,
 				3D73998D2C0204B000B647C0 /* ViewModel.swift */,
@@ -161,19 +160,12 @@
 			path = PitchDetection;
 			sourceTree = "<group>";
 		};
-		3DCB39DB2BF925A10041BCF8 /* NotesAndFrequencies */ = {
-			isa = PBXGroup;
-			children = (
-				3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */,
-			);
-			path = NotesAndFrequencies;
-			sourceTree = "<group>";
-		};
 		3DCB39DE2BFA253A0041BCF8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				3DCB39DF2BFA25460041BCF8 /* FFT.swift */,
 				3DCB39E32BFE2C520041BCF8 /* ErrorType.swift */,
+				3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

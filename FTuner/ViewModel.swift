@@ -41,12 +41,14 @@ import SwiftUI
         }.store(in: &cancellableSet)
         
         
-        pitchDetector.detectPitch()
+        pitchDetector
+            .detectPitch()
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 self?.isLoading = false
             } receiveValue: { [weak self] pitch in
                 guard let self = self else { return }
-                guard let (tune, difference) = getTuneAndDifference(fromFrequency: pitch) else { return }
+                guard let (tune, difference) = TuneProvider.getTuneAndDifference(fromFrequency: pitch) else { return }
 
                 differenceText = formatter.string(from: difference as NSNumber) ?? ""
                 frequencyDifference = difference
@@ -58,7 +60,7 @@ import SwiftUI
     }
     
     private func getTheColorOfDetectedPitch(_ pitch: Double) -> Color {
-        guard let percentage = calculateTheDifferencePercentage(ofFrequency: pitch) else { return .red }
+        guard let percentage = TuneProvider.calculateTheDifferencePercentage(ofFrequency: pitch) else { return .red }
         switch percentage {
             case ..<10: return .green
             case 10..<15: return .yellow
