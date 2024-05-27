@@ -10,6 +10,7 @@
 		3D73998C2C01012900B647C0 /* TuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D73998B2C01012900B647C0 /* TuneView.swift */; };
 		3D73998E2C0204B000B647C0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D73998D2C0204B000B647C0 /* ViewModel.swift */; };
 		3D7399902C0226E900B647C0 /* TunesChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D73998F2C0226E900B647C0 /* TunesChartView.swift */; };
+		3D7399922C047C9D00B647C0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D7399912C047C9D00B647C0 /* README.md */; };
 		3DCB39A92BF91ECD0041BCF8 /* FTunerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */; };
 		3DCB39AB2BF91ECD0041BCF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */; };
 		3DCB39AD2BF91ECF0041BCF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB39AC2BF91ECF0041BCF8 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		3D73998B2C01012900B647C0 /* TuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneView.swift; sourceTree = "<group>"; };
 		3D73998D2C0204B000B647C0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3D73998F2C0226E900B647C0 /* TunesChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesChartView.swift; sourceTree = "<group>"; };
+		3D7399912C047C9D00B647C0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3DCB39A52BF91ECD0041BCF8 /* FTuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCB39A82BF91ECD0041BCF8 /* FTunerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTunerApp.swift; sourceTree = "<group>"; };
 		3DCB39AA2BF91ECD0041BCF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		3DCB399C2BF91ECC0041BCF8 = {
 			isa = PBXGroup;
 			children = (
+				3D7399912C047C9D00B647C0 /* README.md */,
 				3DCB39A72BF91ECD0041BCF8 /* FTuner */,
 				3DCB39B82BF91ECF0041BCF8 /* FTunerTests */,
 				3DCB39C22BF91ECF0041BCF8 /* FTunerUITests */,
@@ -274,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7399922C047C9D00B647C0 /* README.md in Resources */,
 				3DCB39B02BF91ECF0041BCF8 /* Preview Assets.xcassets in Resources */,
 				3DCB39AD2BF91ECF0041BCF8 /* Assets.xcassets in Resources */,
 			);

@@ -40,7 +40,6 @@ import SwiftUI
             self?.buffer = buffer
         }.store(in: &cancellableSet)
         
-        
         pitchDetector
             .detectPitch()
             .receive(on: DispatchQueue.main)
