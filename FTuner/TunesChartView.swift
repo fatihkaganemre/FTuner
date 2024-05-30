@@ -12,7 +12,7 @@ struct TunesChartView: View {
     @Binding var buffer: [Float]
     
     var body: some View {
-        Chart(buffer.indices, id: \.self) { index in
+        Chart(normalise(data: buffer).indices, id: \.self) { index in
             AreaMark(
                 x: .value("Time", index),
                 y: .value("Frequency", buffer[index])
@@ -32,6 +32,14 @@ struct TunesChartView: View {
             endPoint: .top
         )
     }
+    
+    private func normalise(data: [Float]) -> [Float] {
+            guard let min = data.min(), let max = data.max(), min != max else {
+                return data // If all values are the same, return the original array
+            }
+            
+            return data.map { ($0 - min) / (max - min) }
+        }
 }
 
 #Preview {

@@ -22,7 +22,6 @@
 		3DCB39D82BF921330041BCF8 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39D72BF921330041BCF8 /* PitchDetector.swift */; };
 		3DCB39DA2BF9216E0041BCF8 /* AudioCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39D92BF9216E0041BCF8 /* AudioCapture.swift */; };
 		3DCB39DD2BF925B20041BCF8 /* NoteFrequencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */; };
-		3DCB39E02BFA25460041BCF8 /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39DF2BFA25460041BCF8 /* FFT.swift */; };
 		3DCB39E42BFE2C520041BCF8 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39E32BFE2C520041BCF8 /* ErrorType.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		3DCB39D72BF921330041BCF8 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
 		3DCB39D92BF9216E0041BCF8 /* AudioCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCapture.swift; sourceTree = "<group>"; };
 		3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFrequencies.swift; sourceTree = "<group>"; };
-		3DCB39DF2BFA25460041BCF8 /* FFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFT.swift; sourceTree = "<group>"; };
 		3DCB39E32BFE2C520041BCF8 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +164,6 @@
 		3DCB39DE2BFA253A0041BCF8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				3DCB39DF2BFA25460041BCF8 /* FFT.swift */,
 				3DCB39E32BFE2C520041BCF8 /* ErrorType.swift */,
 				3DCB39DC2BF925B20041BCF8 /* NoteFrequencies.swift */,
 			);
@@ -310,7 +307,6 @@
 				3DCB39AB2BF91ECD0041BCF8 /* ContentView.swift in Sources */,
 				3D73998C2C01012900B647C0 /* TuneView.swift in Sources */,
 				3D7399902C0226E900B647C0 /* TunesChartView.swift in Sources */,
-				3DCB39E02BFA25460041BCF8 /* FFT.swift in Sources */,
 				3DCB39A92BF91ECD0041BCF8 /* FTunerApp.swift in Sources */,
 				3DCB39D62BF920510041BCF8 /* YinYang.swift in Sources */,
 				3DCB39E42BFE2C520041BCF8 /* ErrorType.swift in Sources */,

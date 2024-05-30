@@ -8,13 +8,14 @@
 import SwiftUI
 import Charts
 
-
 struct ContentView: View {
     @State var model = ViewModel()
     
     var body: some View {
         if model.isLoading {
-            ProgressView().progressViewStyle(.circular)
+            ProgressView()
+                .progressViewStyle(.circular)
+                .scaleEffect(2.0, anchor: .center)
                 .onAppear {
                     model.startPitchDetection()
                 }

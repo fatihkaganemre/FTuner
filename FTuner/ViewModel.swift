@@ -36,9 +36,9 @@ import SwiftUI
     }
     
     func startPitchDetection() {
-        pitchDetector.bufferPublisher.sink { [weak self] buffer in
-            self?.buffer = buffer
-        }.store(in: &cancellableSet)
+        pitchDetector.bufferPublisher
+            .sink { [weak self] buffer in self?.buffer = buffer }
+            .store(in: &cancellableSet)
         
         pitchDetector
             .detectPitch()
