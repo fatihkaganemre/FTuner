@@ -40,6 +40,18 @@ import SwiftUI
             .sink { [weak self] buffer in self?.buffer = buffer }
             .store(in: &cancellableSet)
         
+        
+//        Task {
+//            for try await pitch in pitchDetector.detectPitchAsync() {
+//                guard let (tune, difference) = TuneProvider.getTuneAndDifference(fromFrequency: pitch) else { return }
+//                differenceText = formatter.string(from: difference as NSNumber) ?? ""
+//                frequencyDifference = difference
+//                tuneName = tune
+//                isLoading = false
+//                color = getTheColorOfDetectedPitch(pitch)
+//            }
+//        }
+        
         pitchDetector
             .detectPitch()
             .receive(on: DispatchQueue.main)

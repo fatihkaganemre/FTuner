@@ -12,6 +12,7 @@ import CoreML
 protocol PitchDetectorProtocol {
     var bufferPublisher: AnyPublisher<[Float], Never> { get }
     func detectPitch() -> AnyPublisher<Double, ErrorType>
+    func detectPitchAsync() -> AsyncThrowingStream<Double, Error>
     func stop()
 }
 
@@ -43,12 +44,33 @@ class PitchDetector: PitchDetectorProtocol {
     func stop() {
         audioCapture.stopRecording()
     }
+    
+    func detectPitchAsync() -> AsyncThrowingStream<Double, Error> {
+        AsyncThrowingStream { continuation in
+            Task {
+                do {
+                    try await audioCapture.askMicrophonePermissionAsync()
+                    let stream = try await audioCapture.startRecordingAsync()
+
+                    for try await buffer in stream {
+                        if let pitch = processBuffer(buffer), isWithinFrequencyRange(pitch) {
+                            continuation.yield(pitch)
+                        }
+                    }
+
+                    continuation.finish()
+                } catch {
+                    continuation.finish(throwing: error)
+                }
+            }
+        }
+    }
 
     func detectPitch() -> AnyPublisher<Double, ErrorType> {
         return audioCapture
             .askMicrophonePermission()
             .flatMap { [weak self] in return self?.audioCapture.startRecording() ?? Empty().eraseToAnyPublisher() }
-            .throttle(for: .milliseconds(100), scheduler: DispatchQueue.global(), latest: true)
+            .throttle(for: .milliseconds(250), scheduler: DispatchQueue.global(), latest: true)
             .receive(on: DispatchQueue.global(qos: .userInteractive))
             .compactMap { [weak self] buffer -> Double? in
                 guard let self = self else { return nil }

@@ -34,12 +34,12 @@ struct TunesChartView: View {
     }
     
     private func normalise(data: [Float]) -> [Float] {
-            guard let min = data.min(), let max = data.max(), min != max else {
-                return data // If all values are the same, return the original array
-            }
-            
-            return data.map { ($0 - min) / (max - min) }
+        guard let min = data.min(), let max = data.max(), min != max else {
+            return data // If all values are the same, return the original array
         }
+        
+        return data.map { ($0 - min) / (max - min) }
+    }
 }
 
 #Preview {
